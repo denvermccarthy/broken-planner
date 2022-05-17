@@ -27,7 +27,12 @@ export default function Entry() {
               defaultValue={entry?.title}
               onChange={(e) => editEntry({ ...entry, title: e.target.value })}
             />
-            <p>Due: {entry?.date}</p>
+            <input
+              type="date"
+              name="date"
+              value={entry?.date || ''}
+              onChange={(e) => editEntry({ ...entry, date: e.target.value })}
+            />
             <textarea
               defaultValue={entry?.content}
               onChange={(e) => editEntry({ ...entry, content: e.target.value })}
